@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Hub</title>
+    <!--Linking the style sheets locally, with bootstrap and my own styles.css page.-->
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="container justify-content-center">
+    <h1 id="titleOfPage">Restaurant Hub</h1>
+    <!--I liked the idea of having create and update forms at the top, and then having the restaurants listed below these two tables. I chose to display the data in bootstrap cards that I found in the bootstrap documentation.
+
+    I wanted to include a way for the user to add their own image of the restaurant or its food, but to make the cards look consistent and good I made them a uniform 150x150, so in the URL input I suggested square dimensions to avoid too much image warping.-->
+    <div class="row border-1" id="formDiv">
+      <div
+        class="col-md text-bg-light border border-secondary rounded"
+        id="addRestaurantDiv"
+      >
+        <h3>Add New Restaurant</h3>
+        <form>
+          <label for="newRestaurantName">Restaurant Name:</label><br />
+          <input type="text" id="newRestaurantName" class="form-control" />
+          <br />
+          <label for="newCuisine">Cuisine:</label><br />
+          <input type="text" id="newCuisine" class="form-control" />
+          <br />
+          <label for="newImageURL">Image URL:</label><br />
+          <input
+            type="text"
+            id="newImageURL"
+            class="form-control"
+            placeholder="Square dimensions recommended"
+          />
+        </form>
+        <br />
+        <button id="create-new-restaurant" class="btn btn-dark">Submit</button>
+        <p></p>
+      </div>
+      <div
+        class="col-md text-bg-light border border-secondary rounded"
+        id="updateRestaurantDiv"
+      >
+        <h3>Update Existing Restaurant</h3>
+        <form>
+          <label for="updateID">ID Number:</label><br />
+          <input type="text" id="updateID" class="form-control" />
+          <br />
+          <label for="updateName">New Name:</label><br />
+          <input type="text" id="updateName" class="form-control" />
+          <br />
+          <label for="updateCuisine">New Cuisine:</label><br />
+          <input type="text" id="updateCuisine" class="form-control" />
+          <br />
+          <label for="updateImage">Image URL:</label><br />
+          <input
+            type="text"
+            id="updateImageURL"
+            class="form-control"
+            placeholder="Square dimensions recommended"
+          />
+        </form>
+        <br />
+        <button id="update-restaurant" class="btn btn-dark">Update</button>
+        <p></p>
+      </div>
+    </div>
+    <div class="bottomDiv">
+      <br />
+      <!--Below here is the restaurantListDiv where all of the new restaurants will appear in/ where my jquery has been set to put the restaurant cards.-->
+      <div class="row row-cols-2 g-3" id="restaurantListDiv"></div>
+    </div>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="restaurants.js"></script>
+  </body>
+</html>

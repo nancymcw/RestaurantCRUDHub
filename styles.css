@@ -1,0 +1,30 @@
+/* Had fun styling with CSS. Added a background and made classes to use a consistent color for the site title and restaurant card titles. Also made the images a uniform dimension. Used some of vscode's clickable settings for some of it too (like the fonts and RGB selection). */
+.container {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 1)
+    ),
+    url("/foodimg.jpg") center top no-repeat;
+  background-size: cover;
+}
+
+#titleOfPage {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-align: center;
+  font-weight: 700;
+  color: rgb(170, 197, 33);
+}
+
+#greenCardTitle {
+  font-size: 30px;
+  color: rgb(170, 197, 33);
+}
+
+.img-fluid {
+  width: 150px;
+  height: 150px;
+}
